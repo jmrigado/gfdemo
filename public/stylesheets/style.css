@@ -6,11 +6,50 @@ a {
   color: #00B7FF;
 }
 
+.mdl-layout-title .logo {
+  height: 24pt;
+  opacity: 1;
+  padding-right: 10pt;
+}
+
 .layout-separator {
   height: 16px;
 }
 
-.superh1 {
-  font-size: 150pt;
+h1.superh1 {
+  font-size: 135pt;
   text-align: center;
+  width: 100%;
+}
+
+h2.superh2 {
+  opacity: .2;
+  position: relative;
+  left: -50px;
+}
+
+.mdl-card {
+  min-height: 125px;
+}
+
+.mdl-card .mdl-card__supporting-text {
+  background-color: #F5F5F5;
+  width: 100%;
+}
+
+.mdl-card .mdl-card-header {
+  text-align: center;
+  width: 100%;
+  margin: 0;
+}
+
+.mdl-card-chart-center {
+  display: block;
+  margin: auto;
+}
+
+img.mdl-card-icon {
+  height: 36pt;
+  opacity: .2;
+  position: absolute;
 }

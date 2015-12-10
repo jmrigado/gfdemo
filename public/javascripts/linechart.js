@@ -19,7 +19,7 @@ function drawChart() {
 
     // Set chart options
     var options = {
-        title: 'Inlet Flow',
+        //title: 'Inlet Flow',
         hAxis: {title: 'Time',  titleTextStyle: {color: '#333'}},
         vAxis: {title: 'GPM',  minValue: 0},
         height: 300

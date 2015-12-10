@@ -4,7 +4,9 @@ block content
   .mdl-layout.mdl-js-layout.mdl-js-layout.mdl-layout--fixed-header
     header.mdl-layout__header.mdl-color--blue-500.mdl-color-text--white
       .mdl-layout__header-row
-        span.mdl-layout-title Georg Fischer
+        span.mdl-layout-title
+          img(src="/images/gf_name.svg").logo
+          img(src="/images/gf_logo.svg").logo
         .mdl-layout-spacer
         button#hdrbtn.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--ico
           i.material-icons more_vert
@@ -15,43 +17,56 @@ block content
 
     main.mdl-layout__content.mdl-color--grey-100
       .mdl-grid.demo-content
-        .mdl-color--white.mdl-shadow--2dp.mdl-cell.mdl-cell--4-col.mdl-grid
-          #gaugeChart
-        .mdl-shadow--2dp.mdl-color--white.mdl-cell.mdl-cell--8-col
-          #lineChart
+
+        .mdl-cell.mdl-cell--4-col.mdl-cell--4-col-tablet.mdl-grid.mdl-grid--no-spacing
+          .mdl-card.mdl-shadow--2dp.mdl-cell.mdl-cell--4-col.mdl-cell--4-col-tablet.mdl-cell--12-col-desktop
+            .mdl-card__title.mdl-card--expand.mdl-color--white.mdl-card-chart.mdl-card-chart-center
+              #gaugeChart
+            .mdl-card__supporting-text.mdl-color-text--grey-600 Gallons Per Minute
+        .mdl-cell.mdl-cell--8-col.mdl-cell--8-col-tablet.mdl-grid.mdl-grid--no-spacing
+          .mdl-card.mdl-shadow--2dp.mdl-cell.mdl-cell--8-col.mdl-cell--8-col-tablet.mdl-cell--12-col-desktop
+            .mdl-card--expand.mdl-color--white.mdl-card-chart
+              #lineChart
+            .mdl-card__supporting-text.mdl-color-text--grey-600 Inlet Flow
         .mdl-cell.mdl-cell--4-col.mdl-cell--8-col-tablet.mdl-grid.mdl-grid--no-spacing
           .mdl-card.mdl-shadow--2dp.mdl-cell.mdl-cell--4-col.mdl-cell--4-col-tablet.mdl-cell--12-col-desktop
             .mdl-card__title.mdl-card--expand.mdl-color--white
-              .mdl-card__supporting-text
-                h1.superh1 7
+              h1.superh1 7
+              h2.superh2 pH
             .mdl-card__supporting-text.mdl-color-text--grey-600 pH Sensor Data
         .mdl-cell.mdl-cell--4-col.mdl-cell--8-col-tablet.mdl-grid.mdl-grid--no-spacing
           .mdl-card.mdl-shadow--2dp.mdl-cell.mdl-cell--4-col.mdl-cell--4-col-tablet.mdl-cell--12-col-desktop
-            .mdl-card__title.mdl-card--expand.mdl-color--blue-100
-              .mdl-card__title-text Temp
-            .mdl-card__supporting-text.mdl-color-text--grey-600 Non dolore elit adipisicing ea reprehenderit consectetur culpa.
+            .mdl-card__title.mdl-card--expand
+              img(src="/images/icons/ic_thermometer_24px.svg").mdl-card-icon
+              h3.mdl-card-header 45f
+            .mdl-card__supporting-text.mdl-color-text--grey-600 Temp
           .layout-separator.mdl-cell--1-col
           .mdl-card.mdl-shadow--2dp.mdl-cell.mdl-cell--4-col.mdl-cell--4-col-tablet.mdl-cell--12-col-desktop
-            .mdl-card__title.mdl-card--expand.mdl-color--blue-300
-              .mdl-card__title-text mV
-            .mdl-card__supporting-text.mdl-color-text--grey-600 Non dolore elit adipisicing ea reprehenderit consectetur culpa.
+            .mdl-card__title.mdl-card--expand
+              img(src="/images/icons/ic_flash_on_black_24px.svg").mdl-card-icon
+              h3.mdl-card-header 0
+            .mdl-card__supporting-text.mdl-color-text--grey-600 mV
           .layout-separator.mdl-cell--1-col
           .mdl-card.mdl-shadow--2dp.mdl-cell.mdl-cell--4-col.mdl-cell--4-col-tablet.mdl-cell--12-col-desktop
-            .mdl-card__title.mdl-card--expand.mdl-color--blue-500
-              .mdl-card__title-text Sensor Part Number
-            .mdl-card__supporting-text.mdl-color-text--grey-600 Non dolore elit adipisicing ea reprehenderit consectetur culpa.
+            .mdl-card__title.mdl-card--expand
+              img(src="/images/icons/ic_number_24px.svg").mdl-card-icon
+              h3.mdl-card-header na
+            .mdl-card__supporting-text.mdl-color-text--grey-600 Sensor Part Number
         .mdl-cell.mdl-cell--4-col.mdl-cell--8-col-tablet.mdl-grid.mdl-grid--no-spacing
           .mdl-card.mdl-shadow--2dp.mdl-cell.mdl-cell--4-col.mdl-cell--4-col-tablet.mdl-cell--12-col-desktop
-            .mdl-card__title.mdl-card--expand.mdl-color--blue-200
-              .mdl-card__title-text Location
-            .mdl-card__supporting-text.mdl-color-text--grey-600 Non dolore elit adipisicing ea reprehenderit consectetur culpa.
+            .mdl-card__title.mdl-card--expand
+              img(src="/images/icons/ic_my_location_black_24px.svg").mdl-card-icon
+              h3.mdl-card-header na
+            .mdl-card__supporting-text.mdl-color-text--grey-600 Location
           .layout-separator.mdl-cell--1-col
           .mdl-card.mdl-shadow--2dp.mdl-cell.mdl-cell--4-col.mdl-cell--4-col-tablet.mdl-cell--12-col-desktop
-            .mdl-card__title.mdl-card--expand.mdl-color--blue-400
-              .mdl-card__title-text Installation Info
-            .mdl-card__supporting-text.mdl-color-text--grey-600 Non dolore elit adipisicing ea reprehenderit consectetur culpa.
+            .mdl-card__title.mdl-card--expand
+              img(src="/images/icons/ic_info_black_24px.svg").mdl-card-icon
+              h3.mdl-card-header na
+            .mdl-card__supporting-text.mdl-color-text--grey-600 Installation Info
           .layout-separator.mdl-cell--1-col
           .mdl-card.mdl-shadow--2dp.mdl-cell.mdl-cell--4-col.mdl-cell--4-col-tablet.mdl-cell--12-col-desktop
-            .mdl-card__title.mdl-card--expand.mdl-color--blue-600
-              .mdl-card__title-text Calibration
-            .mdl-card__supporting-text.mdl-color-text--grey-600 Non dolore elit adipisicing ea reprehenderit consectetur culpa.
+            .mdl-card__title.mdl-card--expand
+              img(src="/images/icons/ic_build_black_24px.svg").mdl-card-icon
+              h3.mdl-card-header na
+            .mdl-card__supporting-text.mdl-color-text--grey-600 Calibration
