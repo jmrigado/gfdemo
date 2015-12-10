@@ -7,8 +7,11 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
     block content
+
     block append scripts
       script(src='http://www.google.com/jsapi')
       script(src='/components/material-design-lite/material.min.js')
+      script(src='/components/socket.io-client/socket.io.js')
+      script(src='/javascripts/main.js')
       script(src='/javascripts/gaugechart.js')
       script(src='/javascripts/linechart.js')
