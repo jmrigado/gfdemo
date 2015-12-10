@@ -22,10 +22,10 @@ h1.superh1 {
   width: 100%;
 }
 
-h2.superh2 {
+h2.mdl-card-icon.super2 {
   opacity: .2;
-  position: relative;
-  left: -50px;
+  position: absolute;
+  padding: 25% 0;
 }
 
 .mdl-card {
