@@ -29,7 +29,7 @@
 
   // Listen for new data
   function startListening() {
-    window.app.onSocketEvent('data::ph', function (data) {
+    window.app.onSocketEvent('data::gpm', function (data) {
       drawChart(data);
     });
   }
