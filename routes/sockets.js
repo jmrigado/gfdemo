@@ -8,5 +8,12 @@ module.exports = io => {
         point: Math.floor(Math.random() * 100) + 1
       })
     }, 50)
+
+    setInterval(() => {
+      socket.emit('data::gpm::hourly', {
+        ts: Date.now(),
+        point: Math.floor(Math.random() * 100) + 1
+      })
+    }, 5000)
   })
 }
