@@ -2,8 +2,7 @@
   "name": "Flow Monitor",
   "description": "Georg Fischer Monitroing System",
   "main": "",
-  "authors": [
-  ],
+  "authors": [],
   "private": true,
   "ignore": [
     "**/.*",
@@ -13,6 +12,7 @@
     "tests"
   ],
   "dependencies": {
-    "material-design-lite": "~1.0.6"
+    "material-design-lite": "~1.0.6",
+    "jquery": "~2.1.4"
   }
 }
