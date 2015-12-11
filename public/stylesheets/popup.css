@@ -1,0 +1,190 @@
+.transition {
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    transition: .5s;
+    -webkit-transition-timing-function: cubic-bezier(.4,0,.5,1);
+    -moz-transition-timing-function: cubic-bezier(.4,0,.5,1);
+    transition-timing-function: cubic-bezier(.4,0,.5,1);
+}
+
+.centered {
+    -webkit-transform: translateX(-50%)translateY(-50%);
+    -moz-transform: translateX(-50%)translateY(-50%);
+    transform: translateX(-50%)translateY(-50%);
+}
+
+.refresh {
+    width: 40px;
+    height: 40px;
+    background: url(http://antoniodinardo.com/TEST/confirmationpopup/refresh.png) no-repeat center / contain;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translateX(-50%)translateY(-50%)rotate(0deg);
+    -moz-transform: translateX(-50%)translateY(-50%)rotate(0deg);
+    transform: translateX(-50%)translateY(-50%)rotate(0deg);
+}
+
+.refresh:hover {
+    -webkit-transform: translateX(-50%)translateY(-50%)rotate(360deg);
+    -moz-transform: translateX(-50%)translateY(-50%)rotate(360deg);
+    transform: translateX(-50%)translateY(-50%)rotate(360deg);
+}
+
+.popup {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 300px;
+    background: #f1f1f1;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 20px;
+    text-align: right;
+    z-index: 1;
+}
+
+.popup.active {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    transition: .5s;
+    -webkit-transition-timing-function: cubic-bezier(.4,0,.5,1);
+    -moz-transition-timing-function: cubic-bezier(.4,0,.5,1);
+    transition-timing-function: cubic-bezier(.4,0,.5,1);
+}
+
+.popup h4 {
+    margin: 0 0 20px 0;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 20px;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+    text-align: left;
+}
+
+.popup p {
+    margin: 0 0 20px;
+    text-align: left;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 3px;
+    color: #ffffff;
+    position: relative;
+    cursor: pointer;
+}
+
+.button.ok {
+    background: #4caf50;
+    margin-right: 6px;
+}
+
+.button.ok:hover {
+    background: #81c784;
+}
+
+.button:before {
+    content: "";
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%)translateY(-50%)scale(0);
+    border-radius: 50%;
+    z-index: 10;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    transition: .5s;
+    -webkit-transition-timing-function: cubic-bezier(.4,0,.5,1);
+    -moz-transition-timing-function: cubic-bezier(.4,0,.5,1);
+    transition-timing-function: cubic-bezier(.4,0,.5,1);
+}
+
+.ok:before {
+    background: #4caf50;
+}
+
+.button.active:before {
+    transform: translateX(-50%)translateY(-50%)scale(1);
+}
+
+/* OK REPLY */
+
+.ok-reply {
+    display: none;
+    position: absolute;
+    z-index: 20;
+    left: 50%;
+    top: 50%;
+    width: 80px;
+    height: 80px;
+}
+
+/* OK REPLY */
+
+.ok-reply.active {
+    display: block;
+}
+
+.ok-reply:before, .ok-reply:after {
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    transition: .5s;
+    -webkit-transition-timing-function: cubic-bezier(.4,0,.5,1);
+    -moz-transition-timing-function: cubic-bezier(.4,0,.5,1);
+    transition-timing-function: cubic-bezier(.4,0,.5,1);
+}
+
+.ok-reply:before {
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 10px;
+    background: white;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    top: 54px;
+    left: 26px;
+    -webkit-transform-origin: top left;
+    -moz-transform-origin: top left;
+    transform-origin: top left;
+}
+
+.ok-reply:after {
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 10px;
+    background: white;
+    -webkit-transform: rotate(225deg);
+    -moz-transform: rotate(225deg);
+    transform: rotate(225deg);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    top: 61px;
+    left: 33px;
+    -webkit-transform-origin: top left;
+    -moz-transform-origin: top left;
+    transform-origin: top left;
+}
+
+.ok-reply.active:before {
+    width: 50px;
+}
+
+.ok-reply.active:after {
+    width: 30px;
+}

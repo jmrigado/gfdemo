@@ -5,10 +5,16 @@ html
     link(rel='stylesheet', href='/components/material-design-lite/material.min.css')
     link(rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons')
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/popup.css')
   body
     block content
+
     block append scripts
+      script(src='/components/jquery/dist/jquery.min.js')
       script(src='http://www.google.com/jsapi')
       script(src='/components/material-design-lite/material.min.js')
+      script(src='/components/socket.io-client/socket.io.js')
+      script(src='/javascripts/main.js')
       script(src='/javascripts/gaugechart.js')
       script(src='/javascripts/linechart.js')
+      script(src='/javascripts/popup.js')
