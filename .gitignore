@@ -30,7 +30,5 @@ public/components
 
 .idea
 
-bin
-
 *.swp
 .vagrant/
