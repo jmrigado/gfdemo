@@ -1,6 +1,9 @@
 extends layout
 
 block content
+  script
+    | window.initLineGraphData = !{initialLineGraphData}
+
   .mdl-layout.mdl-js-layout.mdl-js-layout.mdl-layout--fixed-header
     header.mdl-layout__header.mdl-color--blue-500.mdl-color-text--white
       .mdl-layout__header-row
@@ -56,8 +59,8 @@ block content
     .popup.centered
       span.ok-reply.centered
       h4 Additonal Information
-      p Sensor Part Number: part number goes here
-      p Location: location goes here
-      p Install Information: installation goes here
-      p Calibration Information: calibration goes here
+      p Sensor Part Number: 329849238
+      p Location: Portland, OR
+      p Install Information: Installed
+      p Calibration Information: 0
       .button.ok.transition.active OK

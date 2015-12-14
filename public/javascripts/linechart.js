@@ -1,8 +1,17 @@
-(function () {
-  google.load('visualization', '1', {'packages':['line']});
-  google.setOnLoadCallback(startListening);
+(function (global) {
+  // Initial Data
+  var ts = new Date();
+  ts = new Date(ts.setHours(ts.getHours() - 1));
+  var chartData = global.initLineGraphData.map(function (value) {
+    ts = new Date(ts.setSeconds(ts.getSeconds() + 30));
+    return [ts, value[1]];
+  });
 
-  var chartData = [];
+  google.load('visualization', '1', {'packages':['line']});
+  google.setOnLoadCallback(function () {
+    drawChart(chartData);
+    startListening();
+  });
 
   function drawChart(points) {
       // Create the data table.
@@ -24,9 +33,10 @@
 
   function startListening() {
     window.app.onSocketEvent('data::gpm::hourly', function (data) {
-      chartData.push([new Date(data.ts), data.point]);
-      if (chartData.length > 10) chartData.shift();
+      chartData.push([new Date(), data.point]);
+      if (chartData.length > 108) chartData.shift();
       drawChart(chartData);
     });
   }
-})();
+
+})(window);

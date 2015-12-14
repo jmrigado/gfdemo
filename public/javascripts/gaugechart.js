@@ -1,6 +1,9 @@
 (function () {
   google.load('visualization', '1', {'packages':['corechart', 'gauge']});
-  google.setOnLoadCallback(startListening);
+  google.setOnLoadCallback(function () {
+    startListening();
+    drawChart({point: 0});
+  });
 
   function drawChart(phData) {
       var chartData = [];

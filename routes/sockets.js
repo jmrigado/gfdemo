@@ -1,22 +1,36 @@
 'use strict'
 
+const chokidar = require('chokidar')
 const fs = require('fs')
 const rl = require('readline')
 
 module.exports = io => {
   io.on('connection', function (socket) {
-    console.log('A user connected');
 
-    setInterval(() => {
-      let now = Date.now();
+    let lastTs;
+    console.log(process.cwd())
+    chokidar.watch('./flowMeter-1hr.txt', {persistent: true}).on('change', (filename) => {
+      fs.readFile(filename, 'utf-8', (err, data) => {
+        let lines = data.split('\n')
+        console.log(lines.length)
+        let line = lines[lines.length - 2]
+        console.log('LINE: ' + line)
+        let parts = line.replace(/\+/g, '').split(',')
+        socket.emit('data::gpm', {
+          ts: parts[0],
+          point: parseFloat(parts[2])
+        })
 
-      socket.emit('data::gpm', {
-        ts: now,
-        point: Math.floor(Math.random() * 100) + 1
+        let newTs = new Date(parts[0])
+        if (!lastTs || (newTs - lastTs) > 30000) {
+          socket.emit('data::gpm::hourly', {
+            ts: parts[0],
+            point: parseFloat(parts[2])
+          })
+          lastTs = newTs
+        }
       })
-
-
-    }, 50)
+    })
 
     fs.readFile('PHSensor-1hr.txt', 'utf8', (err, data) => {
       let lines = data.split('\n')
@@ -49,12 +63,5 @@ module.exports = io => {
 
       readLine(lines)
     })
-
-    setInterval(() => {
-      socket.emit('data::gpm::hourly', {
-        ts: Date.now(),
-        point: Math.floor(Math.random() * 100) + 1
-      })
-    }, 5000)
   })
 }
