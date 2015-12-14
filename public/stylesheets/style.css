@@ -59,3 +59,13 @@ img.mdl-card-icon {
   right: 10px;
   bottom: 6px;
 }
+
+@media (max-width: 1024px) {
+  .mdl-card-center-container span.superh1 {
+    font-size: 44pt !important;
+  }
+
+  .mdl-card-center-container span.super2 {
+    font-size: 32pt !important;
+  }
+}
