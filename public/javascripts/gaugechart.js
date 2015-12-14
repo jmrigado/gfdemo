@@ -17,8 +17,7 @@
       ]);
 
       // Set chart options
-      var options = {'title':'How Much Pizza I Ate Last Night',
-          //'width':400,
+      var options = {'title':'Inlet Flow',
           'height':300,
           redFrom: 80, redTo: 100,
           yellowFrom:60, yellowTo: 80,
