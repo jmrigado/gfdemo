@@ -19,7 +19,7 @@ module.exports = io => {
         })
 
         let newTs = new Date(parts[1])
-        if (!lastTs || (newTs - lastTs) > 30000) {
+        if (!lastTs || (newTs - lastTs) > 1000) {
           socket.emit('data::gpm::hourly', {
             ts: parts[1],
             point: parseFloat(parts[3])
