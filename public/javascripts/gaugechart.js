@@ -1,4 +1,5 @@
 (function () {
+  /*
   google.load('visualization', '1', {'packages':['corechart', 'gauge']});
   google.setOnLoadCallback(function () {
     startListening();
@@ -28,6 +29,28 @@
       var chart = new google.visualization.Gauge(document.getElementById('gaugeChart'));
       chart.draw(data, options);
   }
+  */
+
+  // Updates Gauge with new values
+  function drawChart(data) {
+    var point = data.point;
+    /**
+     * data to rotation
+     * 0 -> 0%
+     * 100 -> 271%
+     */
+    var rotateValue = 0;
+    var valueText = 0;
+    if (point !== 0) {
+      rotateValue = 271 * (point / 100);
+      valueText = point.toFixed(2);
+    }
+
+    var elem = document.getElementById('gpmText');
+    document.getElementById('gpmText').innerHTML = valueText;
+    document.getElementById('needle')
+      .setAttribute("transform", "rotate(" + rotateValue + ", 149.5, 149.5)");
+  }
 
   // Listen for new data
   function startListening() {
@@ -35,4 +58,6 @@
       drawChart(data);
     });
   }
+
+  startListening();
 })();

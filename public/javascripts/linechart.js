@@ -1,5 +1,6 @@
 (function (global) {
   // Initial Data
+  var lineChart;
   var timeFormat = 'MM/DD/YYYY HH:mm';
   var ts = new Date();
   ts = new Date(ts.setHours(ts.getHours() - 1));
@@ -63,7 +64,7 @@
 
     //create and draw the chart from DIV
     var ctx = document.getElementById("lineChart").getContext("2d");
-    var lineChart = new Chart(ctx, config);
+    lineChart = new Chart(ctx, config);
   }
 
   function startListening() {
@@ -75,7 +76,6 @@
         dataSet.labels.shift();
         dataSet.datasets[0].data.shift();
       }
-      drawChart(dataSet);
     });
   }
 
