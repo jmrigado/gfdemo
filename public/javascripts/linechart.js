@@ -12,10 +12,11 @@
         label: "Flow",
         backgroundColor: "rgba(33,150,243,0.2)",
         borderColor: "rgba(33,150,243,0.8)",
+        borderWidth: 2,
         pointBackgroundColor: "rgba(33,150,243,0.8)",
+        pointBorderWidth: 1,
         pointBorderColor: "#fff",
         pointHighlightFill: "#fff",
-        pointHighlightStroke: "rgba(151,187,205,1)",
         data: []
       }
     ]
@@ -76,6 +77,8 @@
         dataSet.labels.shift();
         dataSet.datasets[0].data.shift();
       }
+
+      lineChart.update();
     });
   }
 
