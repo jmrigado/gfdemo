@@ -13,7 +13,7 @@ router.get('/', function(req, res, next) {
     for (let i in lines) {
       if ((i % 30) === 0) {
         let parts = lines[i].replace(/\+/g, '').split(',')
-        initData.push([parts[1], parseFloat(parts[3])])
+        initData.push([parts[1], parseFloat(parts[2])])
       }
     }
 

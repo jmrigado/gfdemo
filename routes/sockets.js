@@ -17,16 +17,17 @@ module.exports = io => {
         if (!line) return;
 
         let parts = line.replace(/\+/g, '').split(',')
+        let point = parseFloat(parts[2])
         socket.emit('data::gpm', {
           ts: parts[1],
-          point: parseFloat(parts[3])
+          point
         })
 
         let newTs = new Date(parts[1])
-        if (!lastTs || (newTs - lastTs) > 1000) {
+        if (!lastTs || (newTs - lastTs) >= 1000) {
           socket.emit('data::gpm::hourly', {
             ts: parts[1],
-            point: parseFloat(parts[3])
+            point
           })
           lastTs = newTs
         }
