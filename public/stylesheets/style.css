@@ -69,3 +69,7 @@ img.mdl-card-icon {
     font-size: 32pt !important;
   }
 }
+
+.chart-container {
+  margin: 20pt;
+}
