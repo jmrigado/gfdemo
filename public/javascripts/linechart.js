@@ -7,7 +7,7 @@
     return [ts, value[1]];
   });
 
-  google.load('visualization', '1', {'packages':['line']});
+  google.load('visualization', '1', {'packages':['corechart', 'line']});
   google.setOnLoadCallback(function () {
     drawChart(chartData);
     startListening();
