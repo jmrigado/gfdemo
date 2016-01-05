@@ -71,5 +71,10 @@ img.mdl-card-icon {
 }
 
 .chart-container {
-  margin: 20pt;
+  margin: 5pt 20pt;
+}
+
+div#gaugeChart {
+  height: 100%;
+  width: 100%;
 }
