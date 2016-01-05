@@ -12,6 +12,10 @@ module.exports = io => {
       fs.readFile(filename, 'utf-8', (err, data) => {
         let lines = data.split('\n')
         let line = lines[lines.length - 2]
+
+        // Exit on empty line
+        if (!line) return;
+
         let parts = line.replace(/\+/g, '').split(',')
         socket.emit('data::gpm', {
           ts: parts[1],
@@ -33,6 +37,10 @@ module.exports = io => {
       fs.readFile(filename, 'utf8', (err, data) => {
         let lines = data.split('\n')
         let line = lines[lines.length - 2]
+
+        // Exit on empty line
+        if (!line) return;
+
         let parts = line.replace(/\+/g, '').split(',')
 
         socket.emit('data::ph', {
